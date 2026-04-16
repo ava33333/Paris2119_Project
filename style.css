@@ -7,7 +7,8 @@
     --c-text: #e8f0f8;         /* off-white, easier on eyes than pure white */
     --c-text-muted: #7a9ab8;   /* secondary text */
 
-    --font-main: 'Courier New', monospace;
+    --font-headers: 'Orbitron', sans-serif;
+    --font-main: 'Exo 2', sans-serif;
     --line-height: 1.6;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
@@ -18,7 +19,7 @@
 body {
     background: var(--c-black);
     font-family: var(--font-main);
-    font-size: clamp(15px, 1.2vs, 18px);
+    font-size: clamp(15px, 1.2vw, 18px);
     line-height: var(--line-height);
     color: var(--c-text);
 }
@@ -26,11 +27,15 @@ body {
 h1 {
     color: var(--c-text-muted);
     font-size: clamp(1.4rem, 3vw, 2.5rem);
+    text-shadow: 0 0 10px rgba(74, 138, 180, 0.4); /* Subtle sci-fi glow */
+    font-family: var(--font-headers);
 }
 
 h2 {
     color: var(--c-text-muted);
     font-size: clamp(1.1rem, 2vw, 1.8rem);
+    text-shadow: 0 0 10px rgba(74, 138, 180, 0.4); /* Subtle sci-fi glow */
+    font-family: var(--font-headers);
 }
 
 header {
@@ -42,7 +47,7 @@ header {
 /* sections */
 .section {
     background: var(--c-black-section);
-    padding: var(--spacing-md) clamp(10px, 2vs, 24px);
+    padding: var(--spacing-md) clamp(10px, 2vw, 24px);
     margin: var(--spacing-md) clamp(10px, 3vw, 40px);
     border-radius: var(--radius);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
@@ -78,7 +83,7 @@ header {
     border-bottom: 1px solid var(--c-blue-accent);
 }
 
-.menu list li:last-child {
+.menu-list li:last-child {
     border-bottom: none;
 }
 
