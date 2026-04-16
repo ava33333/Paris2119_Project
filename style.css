@@ -19,7 +19,7 @@
 body {
     background: var(--c-black);
     font-family: var(--font-main);
-    font-size: clamp(15px, 1.2vw, 18px);
+    font-size: clamp(18px, 1.2vw, 22px);
     line-height: var(--line-height);
     color: var(--c-text);
 }
