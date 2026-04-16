@@ -1,0 +1,88 @@
+:root {
+    --c-black: #0d1117;           /* near-black with blue undertone, not flat black */
+    --c-black-section: #131c2e;   /* slightly lighter for section cards */
+    --c-blue-mid: #2a4a6e;     /* mid tone, structural color */
+    --c-blue-accent: #4a8ab4;  /* highlight/accent, the "light ray" blue */
+    --c-blue-light: #a8c8e0;   /* subtle details, borders */
+    --c-text: #e8f0f8;         /* off-white, easier on eyes than pure white */
+    --c-text-muted: #7a9ab8;   /* secondary text */
+
+    --font-main: 'Courier New', monospace;
+    --font-size-body: 18px;
+    --line-height: 1.6;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --radius: 8px;
+}
+
+body {
+    background: var(--c-black);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height);
+    color: var(--c-text);
+}
+
+h1, h2 {
+    color: var(--c-text-muted);
+}
+
+header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* sections */
+.section {
+    background: var(--c-black-section);
+    padding: var(--spacing-md);
+    margin: var(--spacing-md);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* Menu dropdown */
+.menu {
+    position: fixed;
+    top: 20px;
+    left: 50px;
+    z-index: 999;
+}
+
+.menu-toggle {
+    background: var(--c-blue-mid);
+    padding: 10px;
+    width: fit-content;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    border-radius: var(--radius);
+    display: none;
+    background: var(--c-blue-mid);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.menu-list li {
+    border-bottom: 1px solid var(--c-blue-accent);
+}
+
+.menu list li:last-child {
+    border-bottom: none;
+}
+
+.menu-list a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: var(--c-text);
+}
+
+.menu-list a:hover {
+    background: var(--c-blue-accent);
+}
