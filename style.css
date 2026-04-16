@@ -8,7 +8,6 @@
     --c-text-muted: #7a9ab8;   /* secondary text */
 
     --font-main: 'Courier New', monospace;
-    --font-size-body: 18px;
     --line-height: 1.6;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
@@ -19,25 +18,32 @@
 body {
     background: var(--c-black);
     font-family: var(--font-main);
-    font-size: var(--font-size-body);
+    font-size: clamp(15px, 1.2vs, 18px);
     line-height: var(--line-height);
     color: var(--c-text);
 }
 
-h1, h2 {
+h1 {
     color: var(--c-text-muted);
+    font-size: clamp(1.4rem, 3vw, 2.5rem);
+}
+
+h2 {
+    color: var(--c-text-muted);
+    font-size: clamp(1.1rem, 2vw, 1.8rem);
 }
 
 header {
     text-align: center;
     margin-bottom: var(--spacing-lg);
+    padding-left: 120px;
 }
 
 /* sections */
 .section {
     background: var(--c-black-section);
-    padding: var(--spacing-md);
-    margin: var(--spacing-md);
+    padding: var(--spacing-md) clamp(10px, 2vs, 24px);
+    margin: var(--spacing-md) clamp(10px, 3vw, 40px);
     border-radius: var(--radius);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
