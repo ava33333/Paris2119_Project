@@ -71,11 +71,14 @@
         </div>
 
         <p id="next-text">Click next to replace the part.</p><button id="next-button" onclick="replaceParts()">Next</button>
-        <p id="complete-text" style="display:none"><strong>Every part has been replaced.</strong><br><br>Is it the same ship? Why or why not?</p>
+        <label for="answer-box" id="complete-text" style="display:none"><strong>Every part has been replaced.</strong><br><br>Is it the same ship? Why or why not?</label>
+        <textarea id="answer-box" style="display:none" name="answer-box" placeholder="Enter your answer here"></textarea>
     </div>
 
     <script>
     var incr = 0;
+    const svg_arr = ['plank-keel', 'plank-lower', 'plank-mid', 'plank-upper', 'plank-deck', 'mast', 'sail-main', 'sail-sm'];
+
     
     function toggleMenu() {
         const list = document.getElementById('menu-list');
@@ -83,8 +86,6 @@
     }
 
     function replaceParts() {
-
-        const svg_arr = ['plank-keel', 'plank-lower', 'plank-mid', 'plank-upper', 'plank-deck', 'mast', 'sail-main', 'sail-sm'];
         
         var piece = document.getElementById(svg_arr[incr]);
 
@@ -104,6 +105,9 @@
 
             const complete_text = document.getElementById("complete-text");
             complete_text.style.display = '';
+
+            const answer_box = document.getElementById("answer-box");
+            answer_box.style.display = '';
         }
     }
 
