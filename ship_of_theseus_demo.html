@@ -70,9 +70,13 @@
         </svg>
         </div>
 
-        <p id="next-text">Click next to replace the part.</p><button id="next-button" onclick="replaceParts()">Next</button>
-        <label for="answer-box" id="complete-text" style="display:none"><strong>Every part has been replaced.</strong><br><br>Is it the same ship? Why or why not?</label>
+        <p id="next-text">Click next to replace the part.</p> <button id="next-button" onclick="replaceParts()">Next</button>
+        <label for="answer-box" id="complete-text" style="display:none"><strong>Every part has been replaced.</strong><br><br>Is it the same ship? Why or why not?<br></label>
         <textarea id="answer-box" style="display:none" name="answer-box" placeholder="Enter your answer here"></textarea>
+    
+        <button id="submit-button" onclick="revealConnections()">Submit</button>
+        
+        <p><br><br>Revealed connections</p>
     </div>
 
     <script>
@@ -111,6 +115,10 @@
         }
     }
 
+    function revealConnections() {
+        const submit_button = document.getElementById("submit-button");
+        submit_button.style.display = '';
+    }
 
     </script>
 </body>
