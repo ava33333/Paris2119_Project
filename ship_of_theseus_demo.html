@@ -28,7 +28,6 @@
     </div>
 
     <div class="section">
-        /* demo goes here */
         <div id="ship-container">
         <svg viewBox="0 0 500 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;background:#D8EBF5">
             <defs>
@@ -71,7 +70,7 @@
         </svg>
         </div>
 
-        <p>Click next to replace the part.</p><button onclick="replaceParts()">Next</button>
+        <p>Click next to replace the part.</p><button id="nextButton" onclick="replaceParts()">Next</button>
     </div>
 
     <script>
@@ -93,6 +92,12 @@
 
         //increments after the demo to go to next piece
         incr++;
+
+        if(incr > svg_arr.length) {
+            const next_button = document.getElementById("nextButton");
+
+            next_button.style.display = 'none';
+        }
     }
 
 
