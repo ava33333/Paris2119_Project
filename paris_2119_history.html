@@ -25,13 +25,37 @@
 
     <div class="section">
         <p>Imagined history of the BD.</p>
+        <button onclick="revealDoc()">UNCLASSIFIED Paris 2119 History</button>
     </div>
 
-    <!-- MENU SCRIPT -->
+    <div id="gov-doc" style="display:none" class="government-doc">
+        
+        <button onclick="closeDoc()" class="close-btn">✕</button>
+        <div class="stamp">
+            UNCLASSIFIED
+        </div>
+        <br>
+        <p>CATEGORY: <br>
+            SUB CATEGORY: <br>
+            ELEMENT: <br>
+            PROJECT: <br>
+            lorem ipsum lorem ipsum lorem ipsum.
+        </p>
+    </div>
+
     <script>
     function toggleMenu() {
         const list = document.getElementById('menu-list');
         list.style.display = (list.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function revealDoc() {
+        const gov_doc = document.getElementById('gov-doc');
+        gov_doc.style.display = '';
+    }
+
+    function closeDoc() {
+        document.getElementById('gov-doc').style.display = 'none';
     }
 
     </script>

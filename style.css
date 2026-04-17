@@ -102,3 +102,33 @@ header {
     opacity: 0.3%;
     transition: opacity 0.4s;
 }
+
+.government-doc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    overflow-y: auto;
+    background: #f5f0e8;
+    color: #1a1a1a;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.stamp {
+    font-weight: bold;
+    letter-spacing: 0.3em;
+    color: #c0392b;
+    border: 3px solid #c0392b;
+    padding: 4px 12px;
+    display: inline-block;
+    transform: rotate(-5deg);
+}
+
+.close-btn {
+    position: sticky;
+    top: 16px;
+    float: right;
+    margin-right: 16px;
+}
