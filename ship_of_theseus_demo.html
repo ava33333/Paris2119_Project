@@ -70,7 +70,8 @@
         </svg>
         </div>
 
-        <p>Click next to replace the part.</p><button id="nextButton" onclick="replaceParts()">Next</button>
+        <p id="next-text">Click next to replace the part.</p><button id="next-button" onclick="replaceParts()">Next</button>
+        <p id="complete-text" style="display:none"><strong>Every part has been replaced.</strong><br><br>Is it the same ship? Why or why not?</p>
     </div>
 
     <script>
@@ -82,6 +83,7 @@
     }
 
     function replaceParts() {
+
         const svg_arr = ['plank-keel', 'plank-lower', 'plank-mid', 'plank-upper', 'plank-deck', 'mast', 'sail-main', 'sail-sm'];
         
         var piece = document.getElementById(svg_arr[incr]);
@@ -94,9 +96,14 @@
         incr++;
 
         if(incr > svg_arr.length - 1) {
-            const next_button = document.getElementById("nextButton");
+            const next_button = document.getElementById("next-button");
+            const next_text = document.getElementById("next-text");
 
             next_button.style.display = 'none';
+            next_text.style.display = 'none';
+
+            const complete_text = document.getElementById("complete-text");
+            complete_text.style.display = '';
         }
     }
 
