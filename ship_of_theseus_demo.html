@@ -73,10 +73,10 @@
         <p id="next-text">Click next to replace the part.</p> <button id="next-button" onclick="replaceParts()">Next</button>
         <label for="answer-box" id="complete-text" style="display:none"><strong>Every part has been replaced.</strong><br><br>Is it the same ship? Why or why not?<br></label>
         <textarea id="answer-box" style="display:none" name="answer-box" placeholder="Enter your answer here"></textarea>
-    
-        <button id="submit-button" onclick="revealConnections()">Submit</button>
+        <br>
+        <button id="submit-button" style="display:none" onclick="revealConnections()">Submit</button>
         
-        <p><br><br>Revealed connections</p>
+        <p id="connections-text" style="display:none"><br><br>Revealed connections</p>
     </div>
 
     <script>
@@ -112,12 +112,15 @@
 
             const answer_box = document.getElementById("answer-box");
             answer_box.style.display = '';
+
+            const submit_button = document.getElementById("submit-button");
+            submit_button.style.display = '';
         }
     }
 
     function revealConnections() {
-        const submit_button = document.getElementById("submit-button");
-        submit_button.style.display = '';
+        const connections_text = document.getElementById("connections-text");
+        connections_text.style.display = '';
     }
 
     </script>
