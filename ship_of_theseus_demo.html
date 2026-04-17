@@ -77,6 +77,9 @@
         <button id="submit-button" style="display:none" onclick="revealConnections()">Submit</button>
         
         <p id="connections-text" style="display:none">There is no right or wrong answer to this question.</p>
+        
+        <button id="next-page-button" style="display:none" onclick = "window.location.href='transcore_simulation.html'">Go to Next Page</button>
+    
     </div>
 
     <script>
@@ -128,6 +131,9 @@
 
         const connections_text = document.getElementById("connections-text");
         connections_text.style.display = '';
+
+        const next_page_button = document.getElementById("next-page-button");
+        next_page_button.style.dispaly = '';
     }
 
     </script>
