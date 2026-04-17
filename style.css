@@ -97,3 +97,8 @@ header {
 .menu-list a:hover {
     background: var(--c-blue-accent);
 }
+
+.replacing {
+    opacity: 0.3%;
+    transition: opacity 0.4s;
+}

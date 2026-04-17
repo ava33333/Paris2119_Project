@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="style.css">    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ship of Theseus Demot</title>
+    <title>Ship of Theseus Demo</title>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
             </clipPath>
             </defs>
 
-            <rect x="0" y="0" width="500" height="270" fill="#2a4a6e/>
+            <rect x="0" y="0" width="500" height="270" fill="#D8EBF5"/>
             <ellipse cx="90" cy="42" rx="52" ry="16" fill="#EEF6FC"/>
             <ellipse cx="390" cy="50" rx="44" ry="15" fill="#EEF6FC"/>
             <rect x="0" y="222" width="500" height="48" fill="#3A8CAB"/>
@@ -70,14 +70,31 @@
             <polygon points="198,42 198,26 238,34" fill="#8B1A1A"/>
         </svg>
         </div>
+
+        <p>Click next to replace the part.</p><button onclick="replaceParts()">Next</button>
     </div>
 
-    <!-- MENU SCRIPT -->
     <script>
+    var incr = 0;
+    
     function toggleMenu() {
         const list = document.getElementById('menu-list');
         list.style.display = (list.style.display === 'block') ? 'none' : 'block';
     }
+
+    function replaceParts() {
+        const svg_arr = ['plank-keel', 'plank-lower', 'plank-mid', 'plank-upper', 'plank-deck', 'mast', 'sail-main'];
+        
+        var piece = document.getElementById(svg_arr[incr]);
+
+        setTimeout(() => {piece.classList.remove('replacing')}, 400);
+
+        piece.classList.add('replacing');
+
+        //increments after the demo to go to next piece
+        incr++;
+    }
+
 
     </script>
 </body>
