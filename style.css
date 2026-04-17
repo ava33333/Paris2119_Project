@@ -109,13 +109,21 @@ header {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1000;
     overflow-y: auto;
+    z-index: 1000;
+    background: #2a2a2a;
+    padding: 40px;
+}
+.doc-paper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px;
     background: #f5f0e8;
     color: #1a1a1a;
     font-family: 'Courier New', Courier, monospace;
-    padding: 40px 60px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
 }
+
 
 .stamp {
     font-weight: bold;
