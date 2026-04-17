@@ -139,7 +139,7 @@ header {
 .close-btn {
     position: fixed;
     top: 16px;
-    float: right;
+    right: 16px;
     font-size: 1.2rem;
     padding: 8px 14px;
     background: #c0392b;
