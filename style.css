@@ -114,8 +114,10 @@ header {
     background: #2a2a2a;
     padding: 40px;
 }
+
 .doc-paper {
     max-width: 800px;
+    height: 1035px;
     margin: 0 auto;
     padding: 60px;
     background: #f5f0e8;
@@ -123,7 +125,6 @@ header {
     font-family: 'Courier New', Courier, monospace;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
 }
-
 
 .stamp {
     font-weight: bold;
@@ -136,8 +137,16 @@ header {
 }
 
 .close-btn {
-    position: sticky;
     top: 16px;
     float: right;
     margin-right: 16px;
+    background: #c0392b;
+}
+
+.doc-header {
+    position: sticky;
+    top: 0;
+    text-align: right;
+    padding: 8px 16px;
+    background: #f5f0e8;
 }
