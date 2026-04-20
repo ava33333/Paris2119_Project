@@ -57,6 +57,11 @@ button {
     border: none;
 }
 
+#answer-box {
+    width: 60%;
+    height: 150px;
+}
+
 /* sections */
 .section {
     background: var(--c-black-section);
