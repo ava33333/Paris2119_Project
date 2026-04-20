@@ -32,7 +32,9 @@
         <br>
         <p>Access archived files below.</p>
             <p>UNCLASSIFIED Documents</p>
-        <button onclick="revealDoc()">UNCLASSIFIED Paris 2119 History</button>
+        <button onclick="revealDoc()">UNCLASSIFIED Paris 2119 History</button><br><br>
+        <button onclick="revealDoc2()">UNCLASSIFIED Transcore Research</button>
+
         <p>Classified Documents</p>
         <button onclick="unauthPopUp()">CLASSIFIED...</button><br><br>
         <button onclick="unauthPopUp()">CLASSIFIED...</button><br><br>
@@ -43,6 +45,26 @@
     <div id="gov-doc" style="display:none" class="government-doc">
         <div class="doc-header">
             <button onclick="closeDoc()" class="close-btn">✕</button>
+        </div>
+
+        <div class="doc-paper">
+            
+            <div class="stamp">
+                UNCLASSIFIED
+            </div>
+            <br>
+            <p>CATEGORY: <br>
+                SUB CATEGORY: <br>
+                ELEMENT: <br>
+                PROJECT: <br>
+                lorem ipsum lorem ipsum lorem ipsum.
+            </p>
+         </div>
+    </div>
+
+    <div id="gov-doc2" style="display:none" class="government-doc">
+        <div class="doc-header">
+            <button onclick="closeDoc2()" class="close-btn">✕</button>
         </div>
 
         <div class="doc-paper">
@@ -82,6 +104,15 @@
 
     function closeDoc() {
         document.getElementById('gov-doc').style.display = 'none';
+    }
+
+    function revealDoc2() {
+        const gov_doc2 = document.getElementById('gov-doc2');
+        gov_doc2.style.display = '';
+    }
+
+    function closeDoc2() {
+        document.getElementById('gov-doc2').style.display = 'none';
     }
 
     function unauthPopUp() {
