@@ -20,12 +20,18 @@
     </nav>
 
     <header><h1>
-        Paris 2119 Imagined History
+        Ministère de l'Identité et des Flux de la République Française
     </h1></header>
 
     <div class="section">
         <p>Imagined history of the BD.</p>
+        <p>UNCLASSIFIED Documents</p>
         <button onclick="revealDoc()">UNCLASSIFIED Paris 2119 History</button>
+        <p>Classified Documents</p>
+        <button onclick="unauthPopUp()">CLASSIFIED...</button>
+        <button onclick="unauthPopUp()">CLASSIFIED...</button>
+        <button onclick="unauthPopUp()">CLASSIFIED...</button>
+
     </div>
 
     <div id="gov-doc" style="display:none" class="government-doc">
@@ -48,6 +54,15 @@
          </div>
     </div>
 
+    <div id="unauth-popup" style="display:none" class="unauth-popup">
+        <div class="doc-header">
+            <button onclick="closePopUp()" class="close-popup">✕</button>
+        </div>
+
+        <p>You do not have the required clearance level to access this file.</p>
+
+    </div>
+
     <script>
     function toggleMenu() {
         const list = document.getElementById('menu-list');
@@ -61,6 +76,14 @@
 
     function closeDoc() {
         document.getElementById('gov-doc').style.display = 'none';
+    }
+
+    function unauthPopUp() {
+        document.getElementById('unauth-popup').style.display = '';
+    }
+
+    function closePopUp() {
+        document.getElementById('unauth-popup').style.display = 'none';
     }
 
     </script>
