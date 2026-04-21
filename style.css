@@ -161,7 +161,7 @@ button {
 
 .doc-paper {
     display: center-align;
-    margin-bottom: 40px;
+    margin: 40px auto;
     max-width: 800px;
     height: 1035px;
     padding: 60px;
