@@ -62,6 +62,7 @@ button {
 #answer-box {
     width: 60%;
     height: 100px;
+    font-size: 16px;
 }
 
 /* sections */
