@@ -160,6 +160,7 @@ button {
 }
 
 .doc-paper {
+    margin-bottom: 40px;
     max-width: 800px;
     height: 1035px;
     margin: 0 auto;
