@@ -222,4 +222,5 @@ button {
     background-color: black;
     color: black;
     user-select: none;
+    margin: 4x 0;
 }
