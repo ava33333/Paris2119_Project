@@ -291,6 +291,11 @@
         document.getElementById('error-page').style.display = 'none';
         document.getElementById('gov-doc2').style.display = 'none';
         document.getElementById('redacted-gov-doc2').style.display = '';
+        setTimeout(() => {
+            document.getElementById('redacted-gov-doc2').style.display = 'none';
+            document.getElementById('error-page2').style.display = '';
+        }, 4000); 
+
     }
 
     function setupObserver() {
@@ -306,6 +311,7 @@
         }, { root: document.getElementById('gov-doc2'), threshold: 0.5 });
         observer.observe(document.getElementById('article3-trigger'));
     }
+
 
     </script>
 </body>
