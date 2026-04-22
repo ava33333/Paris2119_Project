@@ -60,9 +60,9 @@
             <line x1="197" y1="46" x2="500" y2="143" stroke="#6A5030" stroke-width="1" opacity=".5"/>
             <line x1="197" y1="46" x2="70" y2="186" stroke="#6A5030" stroke-width="1" opacity=".4"/>
 
-            <g id="mast">
-            <rect x="193" y="42" width="11" height="130" rx="3" fill="#6B4226"/>
-            <rect x="168" y="90" width="58" height="5" rx="2" fill="#5A3520"/>
+            <g>
+            <rect id="mast" x="193" y="42" width="11" height="130" rx="3" fill="#6B4226"/>
+            <rect id="mast2" x="168" y="90" width="58" height="5" rx="2" fill="#5A3520"/>
             </g>
             <rect id="boom" x="193" y="167" width="112" height="5" rx="2" fill="#6B4226"/>
             <polygon id="sail-main" points="204,52 306,167 204,167" fill="#EDE0C0" stroke="#C4B080" stroke-width="1.5"/>
@@ -84,7 +84,7 @@
 
     <script>
     var incr = 0;
-    const svg_arr = ['plank-keel', 'plank-lower', 'plank-mid', 'plank-upper', 'plank-deck', 'front-thing', 'boom', 'bowspirit', 'mast', 'sail-main', 'sail-sm'];
+    const svg_arr = ['plank-keel', 'plank-lower', 'plank-mid', 'plank-upper', 'plank-deck', 'front-thing', 'boom', 'bowspirit', 'mast', 'mast2', 'sail-main', 'sail-sm'];
 
     
     function toggleMenu() {
