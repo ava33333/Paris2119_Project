@@ -35,13 +35,13 @@
         <div>
             <p>Access archived files below.</p>
             <h3>UNCLASSIFIED Documents</h3>
-            <button onclick="revealDoc()">UNCLASSIFIED Paris 2119 History</button><br><br>
-            <button onclick="revealDoc2()">UNCLASSIFIED Transcore Research</button>
+            <button onclick="display('gov-doc')">UNCLASSIFIED Paris 2119 History</button><br><br>
+            <button onclick="display('gov-doc2')">UNCLASSIFIED Transcore Research</button>
 
             <h3>CLASSIFIED Documents</h3>
-            <button onclick="unauthPopUp()">CLASSIFIED...</button><br><br>
-            <button onclick="unauthPopUp()">CLASSIFIED...</button><br><br>
-            <button onclick="unauthPopUp()">CLASSIFIED...</button>
+            <button onclick="display('unauth-popup')">CLASSIFIED...</button><br><br>
+            <button onclick="display('unauth-popup')">CLASSIFIED...</button><br><br>
+            <button onclick="display('unauth-popup')">CLASSIFIED...</button>
         </div>
 
         <img src="assets/logo.png" alt="MIF logo" style="max-height:40vh;">
@@ -49,7 +49,7 @@
 
     <div id="gov-doc" style="display:none" class="government-doc">
         <div class="doc-header">
-            <button onclick="closeDoc()" class="close-btn">✕</button>
+            <button onclick="closePage('gov-doc')" class="close-btn">✕</button>
         </div>
 
         <div class="doc-paper">
@@ -111,7 +111,7 @@
 
     <div id="gov-doc2" style="display:none" class="government-doc">
         <div class="doc-header">
-            <button onclick="closeDoc2()" class="close-btn">✕</button>
+            <button onclick="closePage('gov-doc2')" class="close-btn">✕</button>
         </div>
 
         <div class="doc-paper">
@@ -157,8 +157,8 @@
                 participating districts.<br><br>
                 <strong>ARTICLE 3 — KNOWN LIMITATIONS AND SIDE EFFECTS</strong><br>
                 In the interest of transparency, the MIF acknowledges the following 
-                documented side effects observed during trial phases. A minority of 
-                participants reported temporary discomfort including headaches and 
+                documented side effects observed during trial phases. <div id="article3-trigger">
+                A minority of participants reported temporary discomfort including headaches and </div>
                 ocular irritation following transit. Additionally, a small subset of 
                 participants experienced minor cognitive adjustment periods — brief 
                 episodes of disorientation or mild behavioral fluctuation — which 
@@ -181,11 +181,86 @@
 
     <div id="unauth-popup" style="display:none" class="unauth-popup">
         <div class="doc-header">
-            <button onclick="closePopUp()" class="close-popup">✕</button>
+            <button onclick="closePage('unauth-popup')" class="close-popup">✕</button>
         </div>
 
         <p>You do not have the required clearance level to access this file.</p>
 
+    </div>
+
+    <div id="error-page" style="display:none" class="error-screen">
+        <p>404 PAGE NOT FOUND ERROR</p>
+        <button onclick="refresh()">CLICK TO REFRESH</button>
+    </div>
+
+        <div id="redacted-gov-doc2" style="display:none" class="government-doc">
+        <div class="doc-header">
+            <button onclick="closePage('redacted-gov-doc2')" class="close-btn">✕</button>
+        </div>
+
+        <div class="doc-paper">
+            
+            <div class="stamp">
+                UNCLASSIFIED
+            </div>
+            <br>
+            <p>
+                ISSUING BODY: Ministère de l'Identité et des Flux (MIF)<br>
+                CONTRACTOR: Transcore Inc.<br>
+                DOCUMENT TYPE: Research Partnership Summary<br>
+                DATE: March 14, 2109<br><br>
+
+                <strong>MIF Transportation Changes: Transcore</strong><br><br>
+
+                <strong>PREAMBLE</strong><br>
+                For over two centuries, the Ministère de l'Identité et des Flux has 
+                stood as the governing authority of French transportation, from the 
+                railways of the nineteenth century to the infrastructure of the modern 
+                metropolis. It is in this tradition of progress and public service that 
+                the MIF enters a formal research partnership with Transcore Inc., whose 
+                technology represents the most significant advancement in human transit 
+                since the advent of rail.<br><br>
+
+                <strong>ARTICLE 1 — PURPOSE OF PARTNERSHIP</strong><br>
+                The MIF and Transcore Inc. hereby formalize a research and implementation 
+                partnership with the goal of developing, testing, and gradually deploying 
+                Transcore transportation technology across the greater Paris metropolitan 
+                area. This partnership reflects the Republic's enduring commitment to 
+                accessible, sustainable, and efficient movement for all citizens.<br><br>
+
+                <strong>ARTICLE 2 — TECHNOLOGY SUMMARY</strong><br>
+                Transcore transportation technology offers a viable solution to the 
+                persistent challenges of urban congestion, carbon emissions, and transit 
+                inequality. By eliminating the need for physical vehicles and traditional 
+                infrastructure, Transcore reduces the environmental burden of mass transit 
+                while dramatically increasing accessibility for underserved populations. 
+            </div>
+            <div class="doc-paper">
+                Preliminary trials indicate a projected 67% reduction in urban congestion 
+                and a significant decrease in transportation-related emissions within 
+                participating districts.<br><br>
+                <strong>ARTICLE 3 — KNOWN LIMITATIONS <div class="redacted">AND SIDE EFFECTS</div></strong><br>
+                <div class="redacted">In the interest of transparency, </div> the MIF acknowledges the following 
+                documented side effects observed during trial phases. A minority of 
+                participants reported temporary discomfort including headaches and 
+                ocular irritation following transit. <div class="redacted">Additionally, a small subset of 
+                participants experienced minor cognitive adjustment periods — brief 
+                episodes of disorientation or mild behavioral fluctuation — which 
+                resolved without intervention in the majority of cases. </div> Transcore Inc. 
+                and the MIF are committed to continued monitoring and refinement of 
+                these outcomes prior to full public deployment.<br><br>
+
+                <strong>ARTICLE 4 — IMPLEMENTATION TIMELINE</strong><br>
+                A phased rollout is recommended, beginning with voluntary participation 
+                in designated pilot districts. The MIF will oversee regulatory compliance 
+                and public communication throughout all phases. Full metropolitan 
+                implementation is projected within five to ten years pending satisfactory 
+                resolution of outstanding technical concerns.<br><br>
+
+                Issued by the Ministère de l'Identité et des Flux, March 14, 2109.<br>
+                In service of the Republic, as we have been since 1899.
+            </p>
+        </div>
     </div>
 
     <script>
@@ -194,30 +269,35 @@
         list.style.display = (list.style.display === 'block') ? 'none' : 'block';
     }
 
-    function revealDoc() {
-        const gov_doc = document.getElementById('gov-doc');
-        gov_doc.style.display = '';
+    function display(id) {
+        document.getElementById(id).style.display = '';
+        if(id == 'gov-doc2') {
+            setupObserver();
+        }
     }
 
-    function closeDoc() {
-        document.getElementById('gov-doc').style.display = 'none';
+    function closePage(id) {
+        document.getElementById(id).style.display = 'none';
     }
 
-    function revealDoc2() {
-        const gov_doc2 = document.getElementById('gov-doc2');
-        gov_doc2.style.display = '';
-    }
-
-    function closeDoc2() {
+    function refresh() {
+        document.getElementById('error-page').style.display = 'none';
         document.getElementById('gov-doc2').style.display = 'none';
+        document.getElementById('redacted-gov-doc2').style.display = '';
     }
 
-    function unauthPopUp() {
-        document.getElementById('unauth-popup').style.display = '';
-    }
-
-    function closePopUp() {
-        document.getElementById('unauth-popup').style.display = 'none';
+    function setupObserver() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // close gov-doc2, show error page
+                    closePage('gov-doc2');
+                    display('error-page');
+                    observer.disconnect(); // so it only fires once
+                }
+            });
+        }, { root: document.getElementById('gov-doc2'), threshold: 0.5 });
+        observer.observe(document.getElementById('article3-trigger'));
     }
 
     </script>

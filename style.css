@@ -147,6 +147,25 @@ button {
     min-width: 320px;
 }
 
+.error-page {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1000;
+    background: #c0392b;
+    padding: 40px;
+    color: black;
+    font-weight: strong;
+    font-family: var(--font-headers);
+}
+
 .government-doc {
     position: fixed;
     top: 0;
@@ -197,4 +216,10 @@ button {
     position: sticky;
     top: 0;
     text-align: right;
+}
+
+.redacted {
+    background-color: black;
+    color: black;
+    user-select: none;
 }
