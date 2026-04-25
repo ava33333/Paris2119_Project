@@ -39,7 +39,7 @@
             <img id="k2" src="assets/kloé2.png" alt="kloé2" style="display:none; max-height:20vh;"><br>
             <button id="b1" onclick="this.style.display='none'; transport(['p1','p2','p3'], ['k2','k6'], 'b2')" style="display:none">Transport Kloé</button>
 
-            <img id="k6" src="assets/kloé6.png" alt="kloé6" style="display:none; max-height:20vh;">
+            <img id="k6" src="assets/kloé2.png" alt="kloé6" style="display:none; max-height:20vh;">
             <img id="p7" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
             <img id="p8" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
             <img id="p9" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
@@ -47,15 +47,18 @@
             
             <button id="b2" onclick="this.style.display='none'; transport(['p7','p8','p9'], ['k7','k8'], 'b3')" style="display:none">Transport Kloé</button>
 
-            <img id="k8" src="assets/kloé5.png" alt="kloé5" style="display:none; max-height:20vh;">
+            <img id="k8" src="assets/kloé4.png" alt="kloé5" style="display:none; max-height:20vh;">
             <img id="p10" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
             <img id="p11" src="assets/kloé_virtual.png" alt="duplicate kloé" style="display:none; max-height:20vh;">
             <img id="p12" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
             <img id="k9" src="assets/kloé3.png" alt="kloé3" style="display:none; max-height:20vh;"><br>
             
-            <button id="b3" onclick="this.style.display='none'; transport(['p10','p11','p12'], ['k9','k11'], 'b4')" style="display:none">Transport Kloé</button>
+            <button id="b3" onclick="this.style.display='none'; transport(['p10','p11','p12'], ['k9','k11','k12','speech2'], 'b4')" style="display:none">Transport Kloé</button>
 
-            <img id="k11" src="assets/kloé.png" alt="kloé" style="display:none; max-height:20vh;">
+            <img id="k12" src="assets/kloé3.png" alt="kloé" style="display:none; max-height:20vh;">
+            <img id="speech2" src="assets/speech2.png" alt="speech bubble" style="display:none; max-height:18vh;"><br>
+
+            <img id="k11" src="assets/kloé3.png" alt="kloé" style="display:none; max-height:20vh;">
             <img id="p13" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
             <img id="p14" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
             <img id="p15" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
@@ -93,13 +96,11 @@
         setTimeout(() => display(dots[1]), 2000);
         setTimeout(() => display(dots[2]), 3200);
         setTimeout(() => display(finalImgs[0]), 5000);
-        if (finalImgs[1]) {
-            setTimeout(() => {
-                display(finalImgs[1]);
-                if (nextBtn) display(nextBtn);
-            }, 6000);
-        }
+        if (finalImgs[1]) setTimeout(() => display(finalImgs[1]), 6000);
         if (finalImgs[2]) setTimeout(() => display(finalImgs[2]), 7000);
+        if (finalImgs[3]) setTimeout(() => display(finalImgs[3]), 8000);
+        const lastDelay = 5000 + (finalImgs.length - 1) * 1000;
+        setTimeout(() => { if (nextBtn) display(nextBtn); }, lastDelay + 100);
     }
 
     </script>
