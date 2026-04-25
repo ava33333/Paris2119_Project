@@ -63,7 +63,7 @@
 
             <button id="b4" onclick="this.style.display='none'; transport(['p10','p11','p12'], ['k9','k10','speech1'], 'next-pg-btn')" style="display:none">Transport Kloé</button>
             <img id="k10" src="assets/kloé.png" alt="kloé1" style="display:none; max-height:20vh">
-            <img id="s1" src="assets/speech1.png" alt="speech bubble" style="display:none; max-height:10vh"><br>
+            <img id="speech1" src="assets/speech1.png" alt="speech bubble" style="display:none; max-height:10vh"><br>
             
             <button id="next-pg-btn" style="display:none; text-align: center" onclick = "window.location.href='paris_2119_history.html'">Go to Next Page</button>
 
@@ -92,11 +92,13 @@
         setTimeout(() => display(dots[0]), 800);
         setTimeout(() => display(dots[1]), 2000);
         setTimeout(() => display(dots[2]), 3200);
-        setTimeout(() => {
-            display(finalImgs[0]);
-            if (nextBtn) display(nextBtn);
-        }, 5000);
-        if (finalImgs[1]) setTimeout(() => display(finalImgs[1]), 6000);
+        setTimeout(() => display(finalImgs[0]), 5000);
+        if (finalImgs[1]) {
+            setTimeout(() => {
+                display(finalImgs[1]);
+                if (nextBtn) display(nextBtn);
+            }, 6000);
+        }
         if (finalImgs[2]) setTimeout(() => display(finalImgs[2]), 7000);
     }
 
