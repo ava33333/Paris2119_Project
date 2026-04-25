@@ -264,13 +264,13 @@
     </div>
 
     <div id="error-page2" style="display:none" class="error-page">
-        <p>YOU HAVE ACCESSED A CONFIDENTIAL DOCUMENT. MIF AUTHORITIES HAVE BEEN ALERTED. 
+        <p>YOU HAVE ACCESSED A CONFIDENTIAL DOCUMENT. <br>MIF AUTHORITIES HAVE BEEN ALERTED. 
             PLEASE CLOSE THIS PAGE.
         </p>
         <div class="doc-header">
             <button id="close-btn-popup" style="display:none" onclick = "window.location.href='paris_2119_history_analysis.html'" class="close-btn">✕</button>
         </div>
-        <button >Go to Next Page</button>
+
     </div>
 
     <script>
@@ -297,6 +297,7 @@
         setTimeout(() => {
             document.getElementById('redacted-gov-doc2').style.display = 'none';
             document.getElementById('error-page2').style.display = '';
+            document.getElementById('close-btn-popup').style.display = '';
         }, 4000); 
 
     }
