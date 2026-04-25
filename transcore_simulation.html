@@ -27,11 +27,27 @@
         <p>This is the transcore simulator page.</p>
     </div>
 
+    <div class="section">
+        <button onclick="open()" style="display: block; text-align:center; margin:0 auto;">Click here to start</button>
+
+        <button id="next-pg-btn" style="display:none" onclick = "window.location.href='paris_2119_history.html'">Go to Next Page</button>
+    </div>
+
+
+
     <!-- MENU SCRIPT -->
     <script>
     function toggleMenu() {
         const list = document.getElementById('menu-list');
         list.style.display = (list.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function open(id) {
+        document.getElementById(id).style.display = '';
+    }
+
+    function close(id) {
+        document.getElementById(id).style.display = 'none';
     }
 
     </script>
