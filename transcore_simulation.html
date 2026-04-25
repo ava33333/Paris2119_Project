@@ -61,13 +61,12 @@
             <img id="p12" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh; text-align:center">
             <img id="k9" src="assets/kloé3.png" alt="kloé3" style="display:none; max-height:20vh; text-align:right"><br>
 
-            <button id="b4" onclick="this.style.display='none'; transport(['p10','p11','p12'], ['k9','k10'], 'next-pg-btn')" style="display:none">Transport Kloé</button>
-
+            <button id="b4" onclick="this.style.display='none'; transport(['p10','p11','p12'], ['k9','k10','speech1'], 'next-pg-btn')" style="display:none">Transport Kloé</button>
             <img id="k10" src="assets/kloé.png" alt="kloé1" style="display:none; max-height:20vh">
-            <img id="k10" src="assets/speech1.png" alt="speech bubble" style="display:none; max-height:10vh">
+            <img id="s1" src="assets/speech1.png" alt="speech bubble" style="display:none; max-height:10vh">
         </div>
 
-        <button id="next-pg-btn" style="display:none" onclick = "window.location.href='paris_2119_history.html'">Go to Next Page</button>
+        <button id="next-pg-btn" style="display:none; text-align: center" onclick = "window.location.href='paris_2119_history.html'">Go to Next Page</button>
     </div>
 
 
@@ -95,9 +94,8 @@
             display(finalImgs[0]);
             if (nextBtn) display(nextBtn);
         }, 5000);
-        if (finalImgs[1]) {
-            setTimeout(() => display(finalImgs[1]), 6000);
-        }
+        if (finalImgs[1]) setTimeout(() => display(finalImgs[1]), 6000);
+        if (finalImgs[2]) setTimeout(() => display(finalImgs[2]), 7000);
     }
 
     </script>
