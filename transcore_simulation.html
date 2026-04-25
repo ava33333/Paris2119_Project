@@ -35,7 +35,7 @@
             <img id="p1" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh; text-align:center">
             <img id="p2" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh; text-align:center">
             <img id="p3"src="assets/pending.png" alt="pending" style="display:none; max-height:10vh; text-align:center">
-            <img id="k3" src="assets/kloé1.png" alt="kloé1" style="display:none; max-height:20vh; text-align:right"><br>
+            <img id="k3" src="assets/kloé.png" alt="kloé1" style="display:none; max-height:20vh; text-align:right"><br>
             
             <button id="b1" onclick="this.style.display='none'; transport(['p1','p2','p3'], ['k3', 'k4'], 'b2')" style="display:none">Transport Kloé</button>
 
@@ -91,9 +91,12 @@
         setTimeout(() => display(dots[1]), 2000);
         setTimeout(() => display(dots[2]), 3200);
         setTimeout(() => {
-            finalImgs.forEach(id => display(id));
+            display(finalImgs[0]);
             if (nextBtn) display(nextBtn);
         }, 5000);
+        if (finalImgs[1]) {
+            setTimeout(() => display(finalImgs[1]), 5800);
+        }
     }
 
     </script>
