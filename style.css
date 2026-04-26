@@ -75,7 +75,7 @@ button {
 /* sections */
 .section {
     background: var(--c-black-section);
-    padding: var(--spacing-md) clamp(10px, 2vw, 24px);
+    padding: var(--spacing-lg) clamp(10px, 2vw, 30px);
     margin: var(--spacing-md) clamp(10px, 3vw, 40px);
     border-radius: var(--radius);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
