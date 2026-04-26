@@ -123,21 +123,22 @@
         if (finalImgs[1]) setTimeout(() => display(finalImgs[1]), 4000);
         if (finalImgs[2]) setTimeout(() => display(finalImgs[2]), 5000);
         if (finalImgs[3]) setTimeout(() => display(finalImgs[3]), 6000);
-        const lastDelay = 5000 + (finalImgs.length - 1) * 1000;
-        setTimeout(() => { if (nextBtn) display(nextBtn); }, lastDelay + 50);
+        const lastDelay = finalImgs.length === 1 ? 2400 : 4000 + (finalImgs.length - 2) * 1000;
+        setTimeout(() => { if (nextBtn) display(nextBtn); }, lastDelay + 500);
     }
 
     function transportWithError(dots, errorId, loadingDots, successId, finalImgs, nextBtn) {
-    setTimeout(() => display(dots[0]), 600);
-    setTimeout(() => display(dots[1]), 1200); // hologram appears here
-    setTimeout(() => display(dots[2]), 1800);
-    setTimeout(() => display(errorId), 2600);
-    setTimeout(() => display(loadingDots[0]), 3400);
-    setTimeout(() => display(loadingDots[1]), 4000);
-    setTimeout(() => display(loadingDots[2]), 4600);
-    setTimeout(() => display(successId), 5400);
-    finalImgs.forEach((img, i) => setTimeout(() => display(img), 6400 + i * 600));
-    setTimeout(() => display(nextBtn), 6400 + finalImgs.length * 600 + 200);
+        setTimeout(() => display(dots[0]), 600);
+        setTimeout(() => display(dots[1]), 1200);
+        setTimeout(() => display(dots[2]), 1800);
+        setTimeout(() => display(errorId), 2600);
+        setTimeout(() => { hide(errorId); display(loadingDots[0]); }, 3400);
+        setTimeout(() => display(loadingDots[1]), 4000);
+        setTimeout(() => display(loadingDots[2]), 4600);
+        setTimeout(() => { hide(loadingDots[0]); hide(loadingDots[1]); hide(loadingDots[2]); display(successId); }, 5400);
+        setTimeout(() => hide(successId), 7400);
+        finalImgs.forEach((img, i) => setTimeout(() => display(img), 7800 + i * 600));
+        setTimeout(() => display(nextBtn), 7800 + finalImgs.length * 600 + 200);
     }
 
     </script>
