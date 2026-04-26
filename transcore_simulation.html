@@ -43,6 +43,7 @@
     </div>
 
     <div class="section">
+        <br>
         <button id="start" onclick="display('k1'); display('b1'); hide('start')" style="display: block; text-align:center; margin:0 auto;">Click here to start</button>
 
         <div style="display:block; text-align:center">
@@ -109,13 +110,13 @@
     }
 
     function transport(dots, finalImgs, nextBtn) {
-        setTimeout(() => display(dots[0]), 800);
-        setTimeout(() => display(dots[1]), 2000);
-        setTimeout(() => display(dots[2]), 3200);
-        setTimeout(() => display(finalImgs[0]), 5000);
-        if (finalImgs[1]) setTimeout(() => display(finalImgs[1]), 6000);
-        if (finalImgs[2]) setTimeout(() => display(finalImgs[2]), 7000);
-        if (finalImgs[3]) setTimeout(() => display(finalImgs[3]), 8000);
+        setTimeout(() => display(dots[0]), 600);
+        setTimeout(() => display(dots[1]), 1200);
+        setTimeout(() => display(dots[2]), 1800);
+        setTimeout(() => display(finalImgs[0]), 2400);
+        if (finalImgs[1]) setTimeout(() => display(finalImgs[1]), 4000);
+        if (finalImgs[2]) setTimeout(() => display(finalImgs[2]), 5000);
+        if (finalImgs[3]) setTimeout(() => display(finalImgs[3]), 6000);
         const lastDelay = 5000 + (finalImgs.length - 1) * 1000;
         setTimeout(() => { if (nextBtn) display(nextBtn); }, lastDelay + 100);
     }
