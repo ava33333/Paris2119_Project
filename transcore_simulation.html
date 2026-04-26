@@ -43,7 +43,7 @@
     </div>
 
     <div class="section">
-        <button id="start" onclick="display('k1'); display('b1'); close('start')" style="display: block; text-align:center; margin:0 auto;">Click here to start</button>
+        <button id="start" onclick="display('k1'); display('b1'); hide('start')" style="display: block; text-align:center; margin:0 auto;">Click here to start</button>
 
         <div style="display:block; text-align:center">
 
@@ -99,10 +99,12 @@
     }
 
     function display(id) {
-        document.getElementById(id).style.display = '';
+        const el = document.getElementById(id)
+        el.style.display = '';
+        el.scrollIntoView({ behavior: 'smooth', block: 'center'});        
     }
 
-    function close(id) {
+    function hide(id) {
         document.getElementById(id).style.display = 'none';
     }
 
