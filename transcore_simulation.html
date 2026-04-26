@@ -25,16 +25,16 @@
 
     <div class="section">
         <p>Below, you will find a demonstration on how the Transcore works in Paris 2119. In the BD, Kloé complains of headaches and eye pain, which are 
-            passed off as normal side effects. However, when Tristian and Kloé are eating breakfast together, Tristian notes how his toast stick 
+            passed off as normal side effects. However, when Tristan and Kloé are eating breakfast together, Tristan notes how his toast stick 
             looks strange, to which Kloé says it likely degenerated because of how many times it has been duplicated. The technology that creates 
             their breakfast relies on the same mechanism as the Transcore: replication. <br><br>
             In order to "teleport" from one side of the word to another 
             in the matter of seconds, the Transcore creates a duplicate of the individual and replicates them in the destination. The degeneration of 
             the toast sticks comes from the limitations of that technology and its inability to perfectly replicate something each time. Readers are 
-            shown this when Tristian encounters zombified individuals, which are later revealed to be duplicates that were not "deleted" as they were 
+            shown this when Tristan encounters zombified individuals, which are later revealed to be duplicates that were not "deleted" as they were 
             supposed to be. His shock, as well as the continuous use of this technology by most of the Paris 2119 society, shows the lack of transparency 
             regarding this technology. While one might argue that this was not deliberate, or perhaps the individuals do know the limitations, but readers 
-            are not explicity shown that, this idea is refuted when the government wipes Kloés memory of Tristian, wipes his identity, and attempts to kill 
+            are not explicity shown that, this idea is refuted when the government wipes Kloés memory of Tristan, wipes his identity, and attempts to kill 
             him.<br><br>
             In the demo, you can see Kloé physically changes with each use of the Transcore. Though you can see vast physical changes, she cannot. This is 
             intentional to show how she is physiologically changed by using the Transcore, yet fails to see the true horror of the technology. Click the button 
@@ -69,7 +69,13 @@
             <img id="p12" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
             <img id="k9" src="assets/kloé3.png" alt="kloé3" style="display:none; max-height:20vh;"><br>
             
-            <button id="b3" onclick="this.style.display='none'; transport(['p10','p11','p12'], ['k9','k12','speech2', 'k11'], 'b4')" style="display:none">Transport Kloé</button>
+            <button id="b3" onclick="this.style.display='none'; transportWithError(['p10','p11','p12'], 'e1', ['p16','p17','p18'], 'e2', ['k9','k12','speech2','k11'], 'b4')">Transport Kloé</button>
+
+            <h3 id="e1" style="display:none">ERROR: ROGUE DUPLICATE DETECTED.</h3><br>
+            <img id="p16" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
+            <img id="p17" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
+            <img id="p18" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;"><br>
+            <h3 id="e2" style="display:none">DUPLICATE SUCCESSFULLY ELIMINATED.</h3>
 
             <img id="k12" src="assets/kloé3.png" alt="kloé" style="display:none; max-height:20vh;">
             <img id="speech2" src="assets/speech2.png" alt="speech bubble" style="display:none; max-height:18vh;"><br>
@@ -119,6 +125,19 @@
         if (finalImgs[3]) setTimeout(() => display(finalImgs[3]), 6000);
         const lastDelay = 5000 + (finalImgs.length - 1) * 1000;
         setTimeout(() => { if (nextBtn) display(nextBtn); }, lastDelay + 50);
+    }
+
+    function transportWithError(dots, errorId, loadingDots, successId, finalImgs, nextBtn) {
+    setTimeout(() => display(dots[0]), 600);
+    setTimeout(() => display(dots[1]), 1200); // hologram appears here
+    setTimeout(() => display(dots[2]), 1800);
+    setTimeout(() => display(errorId), 2600);
+    setTimeout(() => display(loadingDots[0]), 3400);
+    setTimeout(() => display(loadingDots[1]), 4000);
+    setTimeout(() => display(loadingDots[2]), 4600);
+    setTimeout(() => display(successId), 5400);
+    finalImgs.forEach((img, i) => setTimeout(() => display(img), 6400 + i * 600));
+    setTimeout(() => display(nextBtn), 6400 + finalImgs.length * 600 + 200);
     }
 
     </script>
