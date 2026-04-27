@@ -66,10 +66,11 @@
             <img id="k8" src="assets/kloé4.png" alt="kloé5" style="display:none; max-height:20vh;">
             <img id="p10" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
             <img id="p11" src="assets/kloé_virtual.png" alt="duplicate kloé" style="display:none; max-height:20vh;">
+            <img id="p20" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
             <img id="p12" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
             <img id="k9" src="assets/kloé3.png" alt="kloé3" style="display:none; max-height:20vh;"><br>
             
-            <button id="b3" onclick="this.style.display='none'; transportWithError(['p10','p11','p12'], 'e1', ['p16','p17','p18'], 'e2', ['k9','k12','speech2','k11'], 'b4')" style="display:none">Transport Kloé</button>
+            <button id="b3" onclick="this.style.display='none'; transportWithError(['p10','p11','p12'], 'e1', ['p16','p17','p18'], 'e2', ['k9','k12','speech2','k11'], 'b4', 'p11', 'p20')" style="display:none">Transport Kloé</button>
 
             <h3 id="e1" style="display:none">ERROR: ROGUE DUPLICATE DETECTED.</h3><br>
             <img id="p16" src="assets/pending.png" alt="pending" style="display:none; max-height:10vh;">
@@ -127,7 +128,7 @@
         setTimeout(() => { if (nextBtn) display(nextBtn); }, lastDelay + 500);
     }
 
-    function transportWithError(dots, errorId, loadingDots, successId, finalImgs, nextBtn) {
+    function transportWithError(dots, errorId, loadingDots, successId, finalImgs, nextBtn, k_id, p_id) {
         setTimeout(() => display(dots[0]), 600);
         setTimeout(() => display(dots[1]), 1200);
         setTimeout(() => display(dots[2]), 1800);
@@ -135,7 +136,7 @@
         setTimeout(() => { hide(errorId); display(loadingDots[0]); }, 3400);
         setTimeout(() => display(loadingDots[1]), 4000);
         setTimeout(() => display(loadingDots[2]), 4600);
-        setTimeout(() => { hide(loadingDots[0]); hide(loadingDots[1]); hide(loadingDots[2]); display(successId); }, 5400);
+        setTimeout(() => { hide(loadingDots[0]); hide(loadingDots[1]); hide(loadingDots[2]); display(successId); hide(k_id); display(p_id)}, 5400);
         setTimeout(() => hide(successId), 7400);
         finalImgs.forEach((img, i) => setTimeout(() => display(img), 7800 + i * 600));
         setTimeout(() => display(nextBtn), 7800 + finalImgs.length * 600 + 200);
