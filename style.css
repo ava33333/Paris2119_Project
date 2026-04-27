@@ -81,6 +81,22 @@ button {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
+details {
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+summary {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--c-blue-accent);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+summary:hover {
+    color: var(--c-blue-light);
+}
+
 /* Menu dropdown */
 .menu {
     position: fixed;
