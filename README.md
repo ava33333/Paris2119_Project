@@ -14,12 +14,13 @@ Technology is neutral. The danger in *Paris 2119* lies in who controls it, what 
 
 ## Site Structure
 
-| Page / Section | Description |
+| Page | Purpose |
 |---|---|
-| Ship of Theseus demo | Interactive intro exploring identity and continuity under transformation |
-| Transcore mechanics | Simulation of the BD's central technology |
-| French cultural history | From the Revolution through the Resistance to the *loi de 1949* |
-| Imagined BD history | Glitch/redaction effect — a speculative visual layer |
+| `index.html` | Home page — introduces the BD, frames the thesis, and guides the user into the linear journey |
+| `ship_of_theseus_demo.html` | Interactive SVG demo → philosophical setup |
+| `transcore_simulation.html` | Animated sequence → technology critique |
+| `paris_2119_history.html` | Fake government archive → censorship mechanic |
+| `historical_connections.html` | Essay conclusion: French history + AI |
 
 ---
 
