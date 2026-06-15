@@ -8,7 +8,7 @@ A GitHub Pages site built as an interactive digital essay analyzing *Paris 2119*
 
 ## Thesis
 
-Technology is neutral. The danger in *Paris 2119* lies in who controls it, what they conceals, and who chooses not to question it.
+Technology is neutral. The danger in *Paris 2119* lies in who controls it, what they conceal, and who chooses not to question it.
 
 ---
 
