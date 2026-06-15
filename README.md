@@ -18,7 +18,7 @@ Technology is neutral. The danger in *Paris 2119* lies in who controls it, what 
 |---|---|
 | `index.html` | Home page — introduces the BD, frames the thesis, and guides the user into the linear journey |
 | `ship_of_theseus_demo.html` | Interactive SVG demo → philosophical setup |
-| `transcore_simulation.html` | Animated sequence → technology critique |
+| `transcore_simulation.html` | Animated sequence simulating the BD's teleportation technology and its side effects |
 | `paris_2119_history.html` | Fake government archive → censorship mechanic |
 | `historical_connections.html` | Essay conclusion: French history + AI |
 
